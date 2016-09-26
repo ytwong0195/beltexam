@@ -1,8 +1,59 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-  </head>
-  <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<title></title>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#datepicker').datepicker({
+				maxDate:"+0"
+
+			})
+			
+		});
+
+
+	</script>
+	<style type="text/css">
+		#regis_error{
+			color: red;
+		}
+	</style>
+	
+	
+</head>
+<body>
+	<h2>Registration</h2>
+	<form action='/create' method="POST">
+		Name:<input type="text" name="name" id="name"><br>
+		Alias:<input type="text" name="alias" id="alias"><br>
+		Email:<input type="text" name="email" id="email"><br>
+		Password:<input type="password" name="password" id="password"><br>
+		Confirm Password:<input type="password" name="confirmpassword" id="confirmpassword"><br>
+		Date of Birth:<input id="datepicker" type="text" name="date_of_birth" id="date_of_birth" ><br>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+				<span id=regis_error>{{message}}</span>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<input type="submit" name="Register">
+
+	</form>
+
+	<h2>Login</h2>
+	<form action='/login' method="POST">
+		Email:<input type="text" name="lg_email" id="lg_email"><br>
+		Password:<input type="password" name="lg_password" id="lg_password"><br>
+		<input type="submit" name="Login"><br>
+	</form>
+
+</body>
+<!-- <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/ >
+<script src="/jquery.js"></script>
+<script src="/build/jquery.datetimepicker.full.min.js"></script> -->
 </html>

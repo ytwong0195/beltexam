@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>List of friends</title>
+</head>
+
+<body>
+	<h2>Hello! </h2>
+	<h3>Here is the list of your friends:</h3><br>
+	<table>
+		<table>
+		<tr>
+			<th>Alias</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+			<td>user id</td>
+			<td><a href="/user/id">View Profile</a> <a href="/destroy/users.addedfrien_id">Remove as Friend</a></td>
+
+		</tr>
+		</table><br>
+
+	<h3>Other Users not on your friend's list:</h3><br>
+		<table>
+		<tr>
+			<th>Alias</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+			<td><a href="/user/id">users.alias</a></td>
+			<td>
+				<form action='/add' method="POST">
+				<input type="submit" name="add_as_friend" value="Add as Friend">
+				</form>
+			</td>
+
+		</tr>
+			
+		</table>
+</body>
+</html>
